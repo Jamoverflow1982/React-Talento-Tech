@@ -1,0 +1,37 @@
+.formulario{
+    width: 100%;
+    padding: 1vh 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    input{
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+    }
+    label{
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #012861;
+        font-size: 1rem;
+    }
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

@@ -29,10 +29,16 @@ export const CarritoProvider = ({ children }) => {
         }
     }
 
-    const vaciarCarrito = () => {setCarrito([]);}
+    const vaciarCarrito = () => {
+        setCarrito([]);
+        mostrarAlerta("El carrito fue vaciado");
+        console.log("El carrito fue vaciado");
+    }
 
     const eliminarDelCarrito = (productoId) => {
         setCarrito(carrito.filter(item => item.id !== productoId));
+        mostrarAlerta("El producto " + carrito.find(item => item.id === productoId).nombre + " fue eliminado del carrito");
+        console.log("El producto " + carrito.find(item => item.id === productoId).nombre + " fue eliminado del carrito");
     }
 
     return(

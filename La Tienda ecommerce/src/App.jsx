@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import './App.css'
 import Header from './components/Header/Header'
 import Nav from './components/Navbar/Nav'
@@ -8,6 +9,11 @@ import Inicio from './components/Inicio/Inicio'
 import Footer from './components/Footer/Footer'
 import Carrito from './components/Carrito/Carrito'
 import Alerta from './components/Notificacion/Alerta'
+
+import Admin from './components/Admin/Admin'
+import Login from './components/Login/Login'
+import RutaProtegida from './components/RutaProtegida/RutaProtegida'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -16,10 +22,22 @@ function App() {
     <>
       <Header />
         <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/productos" element={<Productos />} />
-        <Route path="/productos/:id" element={<ProductoDetalle />} />
-        <Route path="/carrito" element={<Carrito />} />
+          <Route path="/" element={<Inicio />} />
+          <Route path="/productos" element={<Productos />} />
+          <Route path="/productos/:id" element={<ProductoDetalle />} />
+          
+          <Route path="/admin" element={
+            <RutaProtegida pagina="Administrador"> 
+              <Admin />
+            </RutaProtegida>
+          } />
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/carrito" element={
+            <RutaProtegida pagina="Carrito">
+              <Carrito />
+            </RutaProtegida>
+            } />
         </Routes>
       <Footer />
       <Alerta />

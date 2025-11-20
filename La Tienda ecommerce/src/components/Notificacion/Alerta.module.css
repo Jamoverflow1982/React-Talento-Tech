@@ -9,7 +9,7 @@
 }
 .alerta{
     width: 40%;
-    background-color: rgb(171, 81, 255);
+    background-color: rgba(171, 81, 255, 0.575);
     color: white;
     padding: 2.5vh;
     border-radius: 10vh;

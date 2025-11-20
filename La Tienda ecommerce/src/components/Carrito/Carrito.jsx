@@ -30,7 +30,7 @@ const Carrito = () => {
                         <tr key={producto.id} className={style.tabla}>
                             <td className={style.cantidad}>{producto.cantidad}</td>
                             <td className={style.producto}>{producto.nombre}</td>
-                            <td className={style.precio}>${(producto.precio).toFixed(2)}</td>
+                            <td className={style.precio}>${parseFloat(producto.precio).toFixed(2)}</td>
                             <td><Button variant="danger" onClick={() => eliminarDelCarrito(producto.id)}>Eliminar</Button></td>
                         </tr>
                     ))}

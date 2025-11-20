@@ -15,7 +15,7 @@ export const AlertaProvider = ({ children }) => {
             
             const timer = setTimeout(() => {
                 setMensajeAlerta(null);
-            }, 3000);
+            }, 2000);
             
             return () => clearTimeout(timer);
         }

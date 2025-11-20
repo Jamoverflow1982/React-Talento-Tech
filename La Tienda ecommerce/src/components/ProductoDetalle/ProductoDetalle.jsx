@@ -13,7 +13,7 @@ const ProductoDetalle = () => {
     const { agregarAlCarrito } = useContext(CarritoContext);
 
     useEffect(() => {
-        fetch(`http://fakestoreapi.com/products/${id}`)
+        fetch(`https://68ddf55ad7b591b4b78e014a.mockapi.io/articulos/${id}`)
         .then(res => res.json())
         .then(data => setProducto(data))
     }, [id])
@@ -24,19 +24,19 @@ const ProductoDetalle = () => {
 
     console.log(producto);
 
-    const productoCarrito = {id: producto.id, nombre: producto.title, precio: producto.price, img: producto.image};
+    const productoCarrito = {id: producto.id, nombre: producto.nombre, precio: producto.precio, img: producto.img};
 
     return (
         <div>
             <h2>Descripcion del Producto</h2>
             <br />
-            <p className={style.titulo}>{producto.title}</p>
-            <p className={style.precio}>${producto.price.toFixed(2)}</p>
-            <img src={producto.image} alt={producto.title} />
-            <p className={style.descripcion}>{producto.description}</p>
+            <p className={style.titulo}>{producto.nombre}</p>
+            <p className={style.precio}>${parseFloat(producto.precio).toFixed(2)}</p>
+            <img src={producto.img} alt={producto.nombre} />
+            <p className={style.descripcion}>{producto.descripcion}</p>
             <div className={style.botonesCompra}>
                 <Link to = "/Productos" className="btn btn-info">Volver</Link>
-                <button type="button" className="btn btn-primary" onClick={() => alert("El producto " + producto.title + " fue comprado")}>Comprar</button>
+                <button type="button" className="btn btn-primary" onClick={() => alert("El producto " + producto.nombre + " fue comprado")}>Comprar</button>
                 <button type="button" className="btn btn-warning" onClick={() => {agregarAlCarrito(productoCarrito); /*alert("El producto " + producto.title + " fue agregado al carrito")*/}}>Agregar al Carrito</button>
             </div>
         </div>

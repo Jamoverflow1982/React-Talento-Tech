@@ -17,7 +17,7 @@ const TarjetaProducto = ({id, nombre, precio, img }) => {
             <img src={img} alt={nombre} />
             <div className={style.cardBody}>
                 <h5 className="card-title">{nombre}</h5>
-                <p className={style.precio}>${precio.toFixed(2)}</p>
+                <p className={style.precio}>${parseFloat(precio).toFixed(2)}</p>
                 <Button type="button" className="btn btn-info" onClick={() => navigate(`/Productos/${id}`)}>Detalles</Button>
                 <div className={style.botonesCompra}>
                     <Button type="button" className="btn btn-primary" onClick={() => alert("El producto " + nombre + " fue comprado")}>Comprar</Button>

@@ -7,7 +7,7 @@ const Inicio = () => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-        fetch('http://fakestoreapi.com/products')
+        fetch('https://68ddf55ad7b591b4b78e014a.mockapi.io/articulos')
         .then(res => res.json())
         .then(data => setProductos(data))
     }, [])

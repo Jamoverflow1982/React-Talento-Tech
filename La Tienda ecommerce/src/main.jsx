@@ -6,17 +6,23 @@ import { BrowserRouter } from 'react-router-dom'
 import { CarritoProvider } from './context/CarritoContext.jsx'
 import { Alert } from 'react-bootstrap'
 import { AlertaProvider } from './context/AlertaContext.jsx'
+import { AutorizacionProvider } from './context/AutorizacionContext.jsx'
 import Alerta from './components/Notificacion/Alerta.jsx'
+import { ProductoProvider } from './context/ProductoContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <AlertaProvider>
-        <Alerta />
-        <CarritoProvider>
-          <App />
-        </CarritoProvider>
-      </AlertaProvider>
+      <AutorizacionProvider>
+        <ProductoProvider>
+          <AlertaProvider>
+            <Alerta />
+            <CarritoProvider>
+              <App />
+            </CarritoProvider>
+          </AlertaProvider>
+        </ProductoProvider>
+      </AutorizacionProvider>
     </BrowserRouter>
   </StrictMode>,
 )

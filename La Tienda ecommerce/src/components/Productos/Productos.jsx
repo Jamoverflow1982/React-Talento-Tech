@@ -6,7 +6,7 @@ const Productos = () => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
-        fetch('http://fakestoreapi.com/products')
+        fetch('https://68ddf55ad7b591b4b78e014a.mockapi.io/articulos')
         .then(res => res.json())
         .then(data => setProductos(data))
         .catch(error => console.log(error))
@@ -20,7 +20,7 @@ const Productos = () => {
         <div className={style.productos}>
             {
                 productos.map(producto => (
-                    <div key={producto.id}><TarjetaProducto id={producto.id} nombre={producto.title} precio={producto.price} img={producto.image} /></div>
+                    <div key={producto.id}><TarjetaProducto id={producto.id} nombre={producto.nombre} precio={producto.precio} img={producto.img} /></div>
                 ))
             }
         </div>
