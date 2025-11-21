@@ -9,7 +9,7 @@ const Footer = () => {
         <div className={style.footer}>
             <div className={style.footerContainer}>
                 <div>
-                    <Link to = "/"><img src="../src/assets/img/logoTransparente.png" alt="Logo La Tienda"/></Link>
+                    <Link to = "/"><img src="../assets/img/logoTransparente.png" alt="Logo La Tienda"/></Link>
                 </div>
                 <div>
                     <ul className={style.redes}>

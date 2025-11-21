@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <>
             <header className={style.header}>
-                <Link to = "/"><img src="../src/assets/img/logoTransparente.png" alt="Logo La Tienda"/></Link>
+                <Link to = "/"><img src="../assets/img/logoTransparente.png" alt="Logo La Tienda"/></Link>
             </header>
             <Nav />
         </>
