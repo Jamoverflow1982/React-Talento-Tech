@@ -9,7 +9,16 @@ const FormularioProducto = ({formulario="agregar", productoIngresado = {}, onCer
     console.log("Tipo de Formulario elegido:", formulario);
 
     const { agregarProducto, editarProducto } = useProductoContext();
-    const [producto, setProducto] = useState(productoIngresado);
+
+    const estadoInicialProducto = {
+        nombre: '',
+        precio: '',
+        img: '',
+        descripcion: '',
+        ...productoIngresado
+    };
+
+    const [producto, setProducto] = useState(estadoInicialProducto);
     const [error, setError] = useState({});
 
     console.log("Producto:", producto);
@@ -65,7 +74,6 @@ const FormularioProducto = ({formulario="agregar", productoIngresado = {}, onCer
             onCerrar();
         }
         }
-        setError({});
     }
 
     const manejarReset = () => {
@@ -82,25 +90,25 @@ const FormularioProducto = ({formulario="agregar", productoIngresado = {}, onCer
         <>
         <h1>{formulario==="agregar" ? "Formulario Agregar Producto" : "Formulario Edicion de Producto"}</h1>
         <form className={style.formulario} onSubmit={manejarSubmit} onReset={manejarReset}>
-            <div className={style.input}>
+            <div className={style.inputForm}>
                 <label htmlFor="nombre">Nombre</label>
                 <input type="text" name="nombre" value={producto.nombre||""} onChange={manejarCambio} placeholder="Ingrese el nombre del producto" />
-                {error.nombre && <p style={{ color : 'red' }}>{error.nombre}</p>}
+                {error.nombre && <p style={{ color : 'red' , fontSize : '20px'}}>{error.nombre}</p>}
             </div>
-            <div className={style.input}>
+            <div className={style.inputForm}>
                 <label htmlFor="precio">Precio</label>
                 <input type="number" name="precio" value={producto.precio||""} onChange={manejarCambio} placeholder="Ingrese el precio del producto" />
-                {error.precio && <p style={{ color : 'red' }}>{error.precio}</p>}
+                {error.precio && <p style={{ color : 'red' , fontSize : '20px' }}>{error.precio}</p>}
             </div>
-            <div className={style.input}>
+            <div className={style.inputForm}>
                 <label htmlFor="img">Imagen</label>
                 <input type="text" name="img" value={producto.img||""} onChange={manejarCambio} placeholder="Ingrese la imagen del producto" />
-                {error.img && <p style={{ color : 'red' }}>{error.img}</p>}
+                {error.img && <p style={{ color : 'red' , fontSize : '20px'}}>{error.img}</p>}
             </div>
-            <div className={style.input}>
+            <div className={style.inputForm}>
                 <label htmlFor="descripcion">Descripcion</label>
                 <input type="text" name="descripcion" value={producto.descripcion||""} onChange={manejarCambio} placeholder="Ingrese la descripcion del producto (minimo 10 caracteres)" />
-                {error.descripcion && <p style={{ color : 'red' }}>{error.descripcion}</p>}
+                {error.descripcion && <p style={{ color : 'red' , fontSize : '20px'}}>{error.descripcion}</p>}
             </div>
             <div className={style.botones}>
                 <button type="submit" class="btn btn-primary">{formulario==="agregar" ? "Agregar Producto" : "Actualizar Producto"}</button>

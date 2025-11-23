@@ -89,7 +89,7 @@ export const ProductoProvider = ({ children }) => {
     const eliminarProducto = async (producto) => {
         try{
             setError(null);
-            const response = await fetch(API + '/' + producto.id, {
+            const response = await fetch(API + '/' + producto, {
                 method: 'DELETE'
             })
 
@@ -97,7 +97,7 @@ export const ProductoProvider = ({ children }) => {
                 throw new Error('Error al eliminar el producto (' + response.status + ')');
             }
 
-            setProductos(productos.filter(item => item.id !== producto.id));
+            setProductos(productos.filter(item => item.id !== producto));
         } catch (error) {
             setError(error.message || 'Error al eliminar el producto');
             console.log("Error al eliminar el producto:", error);

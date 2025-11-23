@@ -14,7 +14,7 @@ const GestionProductos = () => {
         console.log("Producto a agregar dentro de la funcion de GestionProductos.jsx:");
         setFormulario("agregar");
         setMostrarFormulario(true);
-        setProductoSeleccionado("");
+        setProductoSeleccionado(null);
     }
 
     const editarProductoFormulario = (producto) => {
@@ -29,10 +29,17 @@ const GestionProductos = () => {
         setProductoSeleccionado(null);
     }
 
+    const borradoProducto = (id) => {
+        console.log("Producto a borrar dentro de la funcion de GestionProductos.jsx:", id);
+        eliminarProducto(id);
+        setMostrarFormulario(false);
+        setProductoSeleccionado(null);
+    }
+
     return (
         <>
             <div>
-                <button class="btn btn-success" onClick={agregarProductoFormulario}>Agregar Producto</button>
+                <button className="btn btn-success" onClick={agregarProductoFormulario}>Agregar Producto</button>
                 {formulario === "agregar" && mostrarFormulario && <FormularioProducto formulario={formulario} onCerrar={cerrarFormulario} />}
             </div>
             <div>
@@ -43,8 +50,8 @@ const GestionProductos = () => {
                             <h5 className="card-title">{productoLista.nombre}</h5>
                             <p className={style.precio}> ${parseFloat(productoLista.precio).toFixed(2)}</p>
                             <div className={style.cardBody}>
-                                <button class="btn btn-primary" onClick={() => editarProductoFormulario(productoLista)}>Editar</button>
-                                <button class="btn btn-danger" onClick={() => eliminarProducto(productoLista.id)}>Eliminar</button>
+                                <button className="btn btn-primary" onClick={() => editarProductoFormulario(productoLista)}>Editar</button>
+                                <button className="btn btn-danger" onClick={() => borradoProducto(productoLista.id)}>Eliminar</button>
                             </div>
                         </div>
                         {formulario === "editar" && mostrarFormulario && productoSeleccionado.id === productoLista.id && <FormularioProducto formulario={formulario} productoIngresado={productoSeleccionado} onCerrar={cerrarFormulario} />}
