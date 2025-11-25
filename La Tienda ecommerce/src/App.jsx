@@ -9,10 +9,12 @@ import Inicio from './components/Inicio/Inicio'
 import Footer from './components/Footer/Footer'
 import Carrito from './components/Carrito/Carrito'
 import Alerta from './components/Notificacion/Alerta'
+import Registro from './components/RegistroUsuario/RegistroUsuario'
 
 import Admin from './components/Admin/Admin'
 import Login from './components/Login/Login'
 import RutaProtegida from './components/RutaProtegida/RutaProtegida'
+import RutaProtegidaCarrito from './components/RutaProtegidaCarrito/RutaProtegidaCarrito'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -25,6 +27,7 @@ function App() {
           <Route path="/" element={<Inicio />} />
           <Route path="/productos" element={<Productos />} />
           <Route path="/productos/:id" element={<ProductoDetalle />} />
+          <Route path="/registro" element={<Registro />} />
           
           <Route path="/admin" element={
             <RutaProtegida pagina="Administrador"> 
@@ -34,9 +37,9 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/carrito" element={
-            <RutaProtegida pagina="Carrito">
+            <RutaProtegidaCarrito pagina="Carrito">
               <Carrito />
-            </RutaProtegida>
+            </RutaProtegidaCarrito>
             } />
         </Routes>
       <Footer />

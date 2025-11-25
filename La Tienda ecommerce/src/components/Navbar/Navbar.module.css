@@ -29,3 +29,20 @@ ul{
     padding-bottom: 0.5em;
     padding-left: 1em;
 }
+
+@media screen and (max-width: 767px){
+    ul{
+        font-size: 1rem;
+    }
+    .iconCarrito{
+        font-size: 1.5rem;
+    }
+    .bienvenida{
+        font-size: 1rem;
+    }
+    .nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

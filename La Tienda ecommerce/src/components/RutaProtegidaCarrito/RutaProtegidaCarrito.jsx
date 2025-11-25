@@ -7,7 +7,7 @@ const RutaProtegida = ({pagina, children}) => {
 
     const {usuario} = useAutorizacion();
 
-    const estaAutenticado = usuario === "admin";
+    const estaAutenticado = usuario !== null;
 
     const {mostrarAlerta} = useContext(AlertaContext);
 

@@ -38,3 +38,18 @@ img{
     right: 5vh;
     z-index: 1000;
 }
+
+@media screen and (max-width: 767px){
+    .footerContainer{
+        height: 10vh;
+        img{
+            height: 20vh;
+        }
+    }
+    .icon{
+        font-size: 2rem;
+    }
+    .iconWhatsapp{
+        font-size: 3rem;
+    }
+}

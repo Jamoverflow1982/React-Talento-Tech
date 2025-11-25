@@ -30,10 +30,12 @@ const GestionProductos = () => {
     }
 
     const borradoProducto = (id) => {
-        console.log("Producto a borrar dentro de la funcion de GestionProductos.jsx:", id);
-        eliminarProducto(id);
-        setMostrarFormulario(false);
-        setProductoSeleccionado(null);
+        if (window.confirm("¿Desea eliminar el producto?")) {
+            console.log("Producto a borrar dentro de la funcion de GestionProductos.jsx:", id);
+            eliminarProducto(id);
+            setMostrarFormulario(false);
+            setProductoSeleccionado(null);
+        }
     }
 
     return (

@@ -11,6 +11,7 @@ const Nav = () => {
     const navigate = useNavigate();
     const { logout } = useAutorizacion();
     const { usuario } = useAutorizacion();
+    const { usuarioNom } = useAutorizacion();
     const esAdministrador = usuario === 'admin';
 
     return (
@@ -18,7 +19,7 @@ const Nav = () => {
             <ul className="nav nav-tabs">
                 <li className="nav-item">
                     {usuario ?
-                    <p className={style.bienvenida}>Bienvenido {usuario}</p>
+                    <p className={style.bienvenida}>Bienvenido {usuarioNom}</p>
                     :
                     <p className={style.bienvenida}>Bienvenido</p>
                     }
@@ -41,7 +42,7 @@ const Nav = () => {
                     {usuario ? 
                     <button className="btn btn-danger" onClick={() => logout()}>Cerrar Sesión</button>
                     :
-                    <button className="btn btn-info" onClick={() => navigate("/Login")}>Iniciar Sesión</button>
+                    <button className="btn btn-info" onClick={() => navigate("/Login")}>Iniciar Sesión / Registrarse</button>
                     }
                 </li>
                 <li className="nav-item">

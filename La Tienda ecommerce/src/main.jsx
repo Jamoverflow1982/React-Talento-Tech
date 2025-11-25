@@ -9,20 +9,23 @@ import { AlertaProvider } from './context/AlertaContext.jsx'
 import { AutorizacionProvider } from './context/AutorizacionContext.jsx'
 import Alerta from './components/Notificacion/Alerta.jsx'
 import { ProductoProvider } from './context/ProductoContext.jsx'
+import { UsuarioProvider } from './context/UsuarioContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <AutorizacionProvider>
-        <ProductoProvider>
-          <AlertaProvider>
-            <Alerta />
-            <CarritoProvider>
-              <App />
-            </CarritoProvider>
-          </AlertaProvider>
-        </ProductoProvider>
-      </AutorizacionProvider>
+      <AlertaProvider>
+        <UsuarioProvider>
+          <AutorizacionProvider>
+            <ProductoProvider>
+                <Alerta />
+                <CarritoProvider>
+                  <App />
+                </CarritoProvider>
+            </ProductoProvider>
+          </AutorizacionProvider>
+        </UsuarioProvider>
+      </AlertaProvider>
     </BrowserRouter>
   </StrictMode>,
 )
