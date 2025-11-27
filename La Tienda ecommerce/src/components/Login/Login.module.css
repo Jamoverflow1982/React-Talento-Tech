@@ -1,5 +1,6 @@
 
 .login{
+    margin: 5vh 0vh;
     display: flex;
     flex-direction: row;
     justify-content: center;

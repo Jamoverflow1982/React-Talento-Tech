@@ -88,7 +88,7 @@ const FormularioProducto = ({formulario="agregar", productoIngresado = {}, onCer
 
     return (
         <>
-        <h1>{formulario==="agregar" ? "Formulario Agregar Producto" : "Formulario Edicion de Producto"}</h1>
+        <h1 class="container mt-5">{formulario==="agregar" ? "Formulario Agregar Producto" : "Formulario Edicion de Producto"}</h1>
         <form className={style.formulario} onSubmit={manejarSubmit} onReset={manejarReset}>
             <div className={style.inputForm}>
                 <label htmlFor="nombre">Nombre</label>

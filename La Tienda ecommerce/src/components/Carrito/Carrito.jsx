@@ -16,7 +16,7 @@ const Carrito = () => {
     }
 
     return (
-        <div>
+        <div class="container mt-5">
             <h1>Carrito</h1>
             <table>
                 <tbody>

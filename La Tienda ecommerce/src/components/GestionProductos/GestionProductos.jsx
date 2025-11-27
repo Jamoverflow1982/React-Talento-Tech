@@ -40,7 +40,7 @@ const GestionProductos = () => {
 
     return (
         <>
-            <div>
+            <div class="container mt-5">
                 <button className="btn btn-success" onClick={agregarProductoFormulario}>Agregar Producto</button>
                 {formulario === "agregar" && mostrarFormulario && <FormularioProducto formulario={formulario} onCerrar={cerrarFormulario} />}
             </div>

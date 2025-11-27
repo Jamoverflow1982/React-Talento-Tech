@@ -66,7 +66,7 @@ const RegistroUsuario = () => {
     
     return (
         <>
-            <h2>Registro de Usuario</h2>
+            <h2 class="container mt-5">Registro de Usuario</h2>
             <form className={style.formulario} onSubmit={manejarSubmit}>
                 <div className="mb-3">
                     <label htmlFor="nombre" className="form-label">Ingrese su Nombre</label>

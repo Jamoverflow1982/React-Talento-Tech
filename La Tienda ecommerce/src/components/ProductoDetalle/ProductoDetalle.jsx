@@ -27,7 +27,7 @@ const ProductoDetalle = () => {
     const productoCarrito = {id: producto.id, nombre: producto.nombre, precio: producto.precio, img: producto.img};
 
     return (
-        <div>
+        <div class="container mt-5">
             <h2>Descripcion del Producto</h2>
             <br />
             <p className={style.titulo}>{producto.nombre}</p>

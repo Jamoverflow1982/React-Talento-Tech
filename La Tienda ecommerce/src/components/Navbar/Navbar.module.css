@@ -17,9 +17,9 @@ ul{
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px
+    gap: 10px;
 }
 .bienvenida{
     font-size: 1.5rem;
@@ -28,6 +28,25 @@ ul{
     padding-right: 1em;
     padding-bottom: 0.5em;
     padding-left: 1em;
+    .nav-link{
+        border-bottom: none;
+    }
+}
+
+.cartBadge {
+    position: relative; /* Para posicionarlo sobre el ícono */
+    bottom: 2vh; /* Ajusta la posición vertical */
+    right: 2vh; /* Ajusta la posición horizontal */
+    padding: 1px 6px;
+    border-radius: 50%; /* Para que sea circular */
+    background-color: #dc3545; /* Color rojo (similar a Bootstrap 'danger') */
+    color: white;
+    font-size: 0.7em;
+    font-weight: bold;
+    /* Asegura que el texto no se corte */
+    min-width: 18px; 
+    text-align: center;
+    line-height: 1.2;
 }
 
 @media screen and (max-width: 767px){
