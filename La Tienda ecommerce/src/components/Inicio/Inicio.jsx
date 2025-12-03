@@ -14,7 +14,7 @@ const Inicio = () => {
 
     return (
         <>
-            <section className={style.inicio} class="container mt-5">
+            <section className={style.inicio}>
                 <h1>Bienvenido a Emporium</h1>
                 <h2>Nuestra Misión: Crear un Verdadero Emporium</h2>
                 <p className={style.parrafo}>La palabra Emporium significa un gran centro de comercio. En la era digital, ese es nuestro objetivo: ser el único destino que necesitas. En lugar de especializarnos en una sola cosa, hemos decidido especializarnos en tu conveniencia. Hemos reunido una vasta y selecta colección de productos de todos los rubros, desde gadgets de última generación hasta artículos atemporales para el hogar. Cada producto en Emporium ha sido elegido por su calidad y valor, asegurando que cada compra sea una inversión inteligente. Queremos que encuentres, sin esfuerzo, todo lo que deseas y necesitas.</p>

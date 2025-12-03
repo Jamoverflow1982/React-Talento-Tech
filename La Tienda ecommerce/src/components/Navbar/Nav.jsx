@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import {  useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import BuscadorProducto from "../BuscadorProducto/BuscadorProducto";
 
 const Nav = () => {
 
@@ -20,7 +21,7 @@ const Nav = () => {
 
     return (
         <section className={style.nav}>
-            <ul>
+            <ul className={style.pBienvenida}>
                 <li>
                     {usuario ?
                     <p className={style.bienvenida}>Bienvenido {usuarioNom}</p>
@@ -29,13 +30,13 @@ const Nav = () => {
                     }
                 </li>
             </ul>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg">
+                <div className="container-fluid">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav">
+                        <div className="collapse navbar-collapse" id="navbarNav">
+                            <ul className="navbar-nav nav-color">
                                 <li className="nav-item">
                                     <Link to = "/" className="nav-link">Inicio</Link>
                                 </li>
@@ -46,6 +47,9 @@ const Nav = () => {
                                 <li className="nav-item">
                                     <Link to = "/Admin" className="nav-link">Administrador</Link>
                                 </li>}
+                                <li className="nav-item">
+                                    <BuscadorProducto />
+                                </li>
                                 <li className="nav-item">
                                     {usuario ? 
                                     <button className="btn btn-danger" onClick={() => logout()}>Cerrar Sesión</button>

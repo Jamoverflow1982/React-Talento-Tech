@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer'
 import Carrito from './components/Carrito/Carrito'
 import Alerta from './components/Notificacion/Alerta'
 import Registro from './components/RegistroUsuario/RegistroUsuario'
+import ResultadoDeBusqueda from './components/BuscadorProducto/ResultadoDeBusqueda'
 
 import Admin from './components/Admin/Admin'
 import Login from './components/Login/Login'
@@ -17,7 +18,7 @@ import RutaProtegida from './components/RutaProtegida/RutaProtegida'
 import RutaProtegidaCarrito from './components/RutaProtegidaCarrito/RutaProtegidaCarrito'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/productos" element={<Productos />} />
+          <Route path="/busqueda" element={<ResultadoDeBusqueda />} />
           <Route path="/productos/:id" element={<ProductoDetalle />} />
           <Route path="/registro" element={<Registro />} />
           

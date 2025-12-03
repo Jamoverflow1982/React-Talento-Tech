@@ -1,0 +1,34 @@
+.productos{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: no wrap;
+    justify-content: center;
+    gap: 10px;
+    p{
+        text-align: center;
+        color: #ce196d;
+        padding: 2vh;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    ul{
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items:normal;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .productos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    }

@@ -104,6 +104,8 @@ export const ProductoProvider = ({ children }) => {
         }
     }
 
+    console.log("ProductosContext:", productos);
+
     return (
         <ProductoContext.Provider value={{ productos, cargando, error, agregarProducto, editarProducto, eliminarProducto }} >
             {children}

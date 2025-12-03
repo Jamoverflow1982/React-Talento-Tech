@@ -2,6 +2,7 @@ h1{
     padding: 5vh;
 }
 .inicio{
+    background-color: #e3ffe9;
     display: flex;
     flex-direction: column;
     justify-content: center;

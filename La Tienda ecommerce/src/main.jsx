@@ -10,6 +10,10 @@ import { AutorizacionProvider } from './context/AutorizacionContext.jsx'
 import Alerta from './components/Notificacion/Alerta.jsx'
 import { ProductoProvider } from './context/ProductoContext.jsx'
 import { UsuarioProvider } from './context/UsuarioContext.jsx'
+import { BuscarProvider } from './context/BuscadorProductoContext.jsx'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,10 +22,12 @@ createRoot(document.getElementById('root')).render(
         <UsuarioProvider>
           <AutorizacionProvider>
             <ProductoProvider>
+              <BuscarProvider>
                 <Alerta />
                 <CarritoProvider>
                   <App />
                 </CarritoProvider>
+              </BuscarProvider>
             </ProductoProvider>
           </AutorizacionProvider>
         </UsuarioProvider>
