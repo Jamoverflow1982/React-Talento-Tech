@@ -52,4 +52,7 @@ img{
     .iconWhatsapp{
         font-size: 3rem;
     }
+    ul{
+        background-color: transparent;
+    }
 }
