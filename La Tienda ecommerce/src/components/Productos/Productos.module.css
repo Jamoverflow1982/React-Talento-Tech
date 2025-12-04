@@ -4,6 +4,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.botonesPaginacion{
+    padding: 2vh;
+}
 
 @media screen and (max-width: 767px){
     .productos{
