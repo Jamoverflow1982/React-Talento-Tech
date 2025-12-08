@@ -51,6 +51,7 @@ const GestionProductos = () => {
                             <img src={productoLista.img} alt={productoLista.nombre} />
                             <h5 className="card-title">{productoLista.nombre}</h5>
                             <p className={style.precio}> ${parseFloat(productoLista.precio).toFixed(2)}</p>
+                            <p className={style.descripcion}>Es producto destacado: {productoLista.destacado ? "Si" : "No"}</p>
                             <div className={style.cardBody}>
                                 <button className="btn btn-primary" onClick={() => editarProductoFormulario(productoLista)}>Editar</button>
                                 <button className="btn btn-danger" onClick={() => borradoProducto(productoLista.id)}>Eliminar</button>

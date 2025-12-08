@@ -15,6 +15,7 @@ const FormularioProducto = ({formulario="agregar", productoIngresado = {}, onCer
         precio: '',
         img: '',
         descripcion: '',
+        destacado: false,
         ...productoIngresado
     };
 
@@ -109,6 +110,10 @@ const FormularioProducto = ({formulario="agregar", productoIngresado = {}, onCer
                 <label htmlFor="descripcion">Descripcion</label>
                 <input type="text" name="descripcion" value={producto.descripcion||""} onChange={manejarCambio} placeholder="Ingrese la descripcion del producto (minimo 10 caracteres)" />
                 {error.descripcion && <p style={{ color : 'red' , fontSize : '20px'}}>{error.descripcion}</p>}
+            </div>
+            <div>
+                <label htmlFor="destacado">Destacado</label>
+                <input type="checkbox" name="destacado" checked={producto.destacado} onChange={manejarCambio} />
             </div>
             <div className={style.botones}>
                 <button type="submit" class="btn btn-primary">{formulario==="agregar" ? "Agregar Producto" : "Actualizar Producto"}</button>
